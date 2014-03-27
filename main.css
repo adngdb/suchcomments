@@ -1,0 +1,69 @@
+body {
+    background-color: gray;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Comic Sans MS, Comic Sans, Chalkboard, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    font-style: italic;
+    opacity: 0.5;
+    margin-top: 0;
+    position: absolute;
+    text-align: center;
+    width: 99%;
+}
+
+h2 {
+    color: #ec2f2f;
+    position: absolute;
+    text-align: center;
+    text-shadow: black 0 0 2px;
+    margin-top: 200px;
+    width: 90%;
+}
+
+.error {
+    display: none;
+}
+
+#comments {
+    text-shadow: black 0 0 1px;
+}
+
+#comments span {
+    display: inline-block;
+    max-width: 400px;
+}
+
+.doge-image {
+    width: 550px;
+    height: 550px;
+    background: url(doge-regular.png);
+    background-repeat: no-repeat;
+    background-attachment: center center;
+    background-size: 550px 550px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -275px;
+    margin-top: -320px;
+}
+
+footer {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+footer a {
+    color: yellow;
+}
