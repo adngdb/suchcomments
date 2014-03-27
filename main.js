@@ -11,21 +11,14 @@ $(function () {
         'So Useful',
     ];
 
-    // Get comments!
-    $.getJSON(
-        'https://crash-stats.allizom.org/api/SuperSearch/?user_comments=!__null__&_results_number=200',
-        function (data) {
-            var comments = [];
-            for (var i = data.hits.length - 1; i >= 0; i--) {
-                comments.push(data.hits[i].user_comments);
-            };
-
-            // Remove the loading sub-title.
-            $('h2').remove();
-
-            doTheMagic(comments);
-        }
-    );
+    var errors = [
+        'Much Error',
+        'So Wait',
+        'Many Refresh',
+        'Wow Problem',
+        'Very Failure',
+        'Such Bad',
+    ];
 
     var suchcolors = [
         "#0066FF", "#FF3399", "#33CC33", "#FFFF99", "#FFFF75", "#8533FF",
@@ -33,9 +26,32 @@ $(function () {
         "#D1D1E0", "#FF5050", "#FFFFF0", "#CC99FF", "#66E0C2", "#FF4DFF", "#00CCFF",
     ];
 
+    // Such comments!
+    $.ajax({
+        dataType: "json",
+        url: 'https://crash-stats.allizom.org/api/SuperSearch/?user_comments=!__null__&_results_number=200',
+        success: function (data) {
+            var comments = [];
+            for (var i = data.hits.length - 1; i >= 0; i--) {
+                comments.push(data.hits[i].user_comments);
+            };
+
+            // much loaded
+            $('h2').remove();
+
+            doTheMagic(comments);
+        },
+        error: function (jqXHR) {
+            // such error
+            $('h2').text('Wow Error');
+
+            doTheMagic(errors);
+        }
+    });
+
     function r(arr) {
         return arr[Math.floor(Math.random() * arr.length)];
-    };
+    }
 
     function doTheMagic(comments) {
         function updateComments() {

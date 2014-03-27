@@ -20,7 +20,8 @@ h1 {
 }
 
 h2 {
-    color: #ec2f2f;
+    color: red;
+    font-size: 40px;
     position: absolute;
     text-align: center;
     text-shadow: black 0 0 2px;
