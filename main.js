@@ -6,7 +6,7 @@ $(function () {
         'Such Comments',
         'So Angry',
         'Much Nasty',
-        'Many Fuck',
+        'Many Swears',
         'Wow Fix It',
         'So Useful',
     ];
