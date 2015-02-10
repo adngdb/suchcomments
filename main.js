@@ -29,7 +29,7 @@ $(function () {
     // Such comments!
     $.ajax({
         dataType: "json",
-        url: 'https://crash-stats.allizom.org/api/SuperSearch/?user_comments=!__null__&_results_number=200',
+        url: 'https://crash-stats.mozilla.com/api/SuperSearch/?user_comments=!__null__&_results_number=200',
         success: function (data) {
             var comments = [];
             for (var i = data.hits.length - 1; i >= 0; i--) {
