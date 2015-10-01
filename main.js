@@ -29,11 +29,16 @@ $(function () {
     // Such comments!
     $.ajax({
         dataType: "json",
-        url: 'https://crash-stats.mozilla.com/api/SuperSearch/?user_comments=!__null__&_results_number=200&_columns=user_comments',
+        url: 'https://crash-stats.mozilla.com/api/SuperSearch/?user_comments=!__null__&_results_number=200&_columns=user_comments&_sort=-date',
         success: function (data) {
             var comments = [];
             for (var i = data.hits.length - 1; i >= 0; i--) {
-                comments.push(data.hits[i].user_comments);
+                var comment = data.hits[i].user_comments;
+
+                // Remove comments too small to mean anything.
+                if (comment.length > 2) {
+                    comments.push(data.hits[i].user_comments);
+                }
             };
 
             // much loaded
